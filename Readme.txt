@@ -3,6 +3,8 @@ you can change/develop the current code according to you.
 you shoul download GBDK to build.
 
 --------------------------------------------------------------
+test against for protection.
+
 1- remove all file except .c and makefile.bat
 2- change the code
 3-run makefile.bat

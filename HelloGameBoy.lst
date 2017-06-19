@@ -1,0 +1,142 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : FreeWare ANSI-C Compiler
+                              3 ; Version 2.2.1 Mon Jun 19 09:51:33 2017
+                              4 
+                              5 ;--------------------------------------------------------
+q                             6 	.module ERKUT~1
+                              7 	
+                              8 ;--------------------------------------------------------
+                              9 ; Public variables in this module
+                             10 ;--------------------------------------------------------
+                             11 	.globl _main
+                             12 	.globl _printf
+                             13 	.globl _main
+                             14 ;--------------------------------------------------------
+                             15 ; Externals used
+                             16 ;--------------------------------------------------------
+                             17 	.globl __io_out
+                             18 	.globl __io_in
+                             19 	.globl __io_status
+                             20 	.globl _sys_time
+                             21 	.globl __cpu
+                             22 ;--------------------------------------------------------
+                             23 ; special function registers
+                             24 ;--------------------------------------------------------
+                             25 ;--------------------------------------------------------
+                             26 ; special function bits 
+                             27 ;--------------------------------------------------------
+                             28 ;--------------------------------------------------------
+                             29 ; internal ram data
+                             30 ;--------------------------------------------------------
+                             31 	.area _DATA
+                             32 ;--------------------------------------------------------
+                             33 ; overlayable items in internal ram 
+                             34 ;--------------------------------------------------------
+                             35 	.area _OVERLAY
+                             36 ;--------------------------------------------------------
+                             37 ; indirectly addressable internal ram data
+                             38 ;--------------------------------------------------------
+                             39 	.area _ISEG
+                             40 ;--------------------------------------------------------
+                             41 ; bit data
+                             42 ;--------------------------------------------------------
+                             43 	.area _BSEG
+                             44 ;--------------------------------------------------------
+                             45 ; external ram data
+                             46 ;--------------------------------------------------------
+                             47 	.area _XSEG
+                             48 ;--------------------------------------------------------
+                             49 ; global & static initialisations
+                             50 ;--------------------------------------------------------
+                             51 	.area _GSINIT
+                             52 	.area _GSFINAL
+                             53 	.area _GSINIT
+                             54 ;--------------------------------------------------------
+                             55 ; Home
+                             56 ;--------------------------------------------------------
+                             57 	.area _HOME
+                             58 	.area _CODE
+                             59 ;--------------------------------------------------------
+                             60 ; code
+                             61 ;--------------------------------------------------------
+                             62 	.area _CODE
+                             63 ;	HelloGameBoy.c 4
+                             64 ; genLabel
+                             65 ; genFunction
+                             66 ;	---------------------------------
+                             67 ; Function main
+                             68 ; ---------------------------------
+   0000                      69 ___main_start:
+   0000                      70 _main:
+                             71 	
+                             72 ;	HelloGameBoy.c 5
+                             73 ; genIpush
+   0000 21 1C 00             74 	ld	hl,#__str_0 + 0
+   0003 E5                   75 	push	hl
+                             76 ; genCall
+   0004 CD 00 00             77 	call	_printf
+   0007 E8 02                78 	lda	sp,2(sp)
+                             79 ;	HelloGameBoy.c 6
+                             80 ; genIpush
+   0009 21 1E 00             81 	ld	hl,#__str_1 + 0
+   000C E5                   82 	push	hl
+                             83 ; genCall
+   000D CD 00 00             84 	call	_printf
+   0010 E8 02                85 	lda	sp,2(sp)
+                             86 ;	HelloGameBoy.c 7
+                             87 ; genIpush
+   0012 21 2B 00             88 	ld	hl,#__str_2 + 0
+   0015 E5                   89 	push	hl
+                             90 ; genCall
+   0016 CD 00 00             91 	call	_printf
+   0019 E8 02                92 	lda	sp,2(sp)
+                             93 ; genLabel
+   001B                      94 00101$:
+                             95 ; genEndFunction
+                             96 	
+   001B C9                   97 	ret
+   001C                      98 ___main_end:
+   001C                      99 __str_0:
+   001C 0A                  100 	.db 0x0A
+   001D 00                  101 	.db 0x00
+   001E                     102 __str_1:
+   001E 45 72 6B 75 74 20   103 	.ascii "Erkut YILDIZ"
+        59 49 4C 44 49 5A
+   002A 00                  104 	.db 0x00
+   002B                     105 __str_2:
+   002B 0A                  106 	.db 0x0A
+   002C 46 69 72 73 74 20   107 	.ascii "First Gameboy Code"
+        47 61 6D 65 62 6F
+        79 20 43 6F 64 65
+   003E 00                  108 	.db 0x00
+                            109 	.area _CODE
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 1.
+
+Symbol Table
+
+  0 ___main_end                        001C R
+  0 ___main_start                      0000 R
+    __cpu                              **** GX
+    __io_in                            **** GX
+    __io_out                           **** GX
+    __io_status                        **** GX
+  0 __str_0                            001C R
+  0 __str_1                            001E R
+  0 __str_2                            002B R
+  0 _main                              0000 GR
+    _printf                            **** GX
+    _sys_time                          **** GX
+
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 2.
+
+Area Table
+
+   0 _CODE                              size   3F   flags 0
+   1 _DATA                              size    0   flags 0
+   2 _OVERLAY                           size    0   flags 0
+   3 _ISEG                              size    0   flags 0
+   4 _BSEG                              size    0   flags 0
+   5 _XSEG                              size    0   flags 0
+   6 _GSINIT                            size    0   flags 0
+   7 _GSFINAL                           size    0   flags 0
+   8 _HOME                              size    0   flags 0
